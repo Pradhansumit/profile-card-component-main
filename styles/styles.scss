@@ -1,0 +1,178 @@
+// ----------- Colors -----------
+
+// Primary
+
+$cyan: hsl(185, 75%, 39%);
+$desaturatedblue: hsl(229, 23%, 23%);
+$grayishblue: hsl(227, 10%, 46%);
+
+// Neutral
+
+$gray: hsl(0, 0%, 59%);
+
+// ----------- typography -----------
+
+$primaryfont: "Kumbh Sans", sans-serif;
+$fsize: 18px;
+$freg: 400;
+$fbold: 700;
+
+// ----------- globals -----------
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+//mixin
+@mixin Flex($dir, $jc) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+}
+body {
+  @include Flex(column, center);
+  align-items: center;
+  min-height: 100vh;
+  background: $cyan;
+  overflow: hidden;
+  font: {
+    weight: $freg;
+    family: $primaryfont;
+  }
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.background-design-container {
+  .background-top,
+  .background-bottom {
+    position: absolute;
+    width: 662px;
+    height: 662px;
+    z-index: -999;
+  }
+
+  //   .background-top {
+  //     top: -50%;
+  //     left: -75%;
+  //     transform: rotate(45deg);
+  //     opacity: 0.3;
+  //   }
+
+  //   .background-bottom {
+  //     bottom: -50%;
+  //     right: -75%;
+  //   }
+}
+
+.content-container {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.text-content-container {
+  .profile-img-box {
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: solid 5px white;
+    transform: translate(0, -50%);
+    margin-bottom: -30px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .person-info-container {
+    text-align: center;
+
+    p {
+      &.name {
+        font: {
+          weight: $fbold;
+          size: $fsize;
+        }
+
+        span {
+          font-weight: $freg;
+          opacity: 0.8;
+        }
+      }
+      &.location {
+        font: {
+          size: 14px;
+        }
+        margin-top: 0.6rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .stats-container {
+    @include Flex(row, space-evenly);
+    margin: 0 0 2rem 0;
+    padding-top: 1.5rem;
+    border-top: solid 1px rgba(0, 0, 0, 0.2);
+
+    .stats-box {
+      text-align: center;
+      p {
+        &.stats-count {
+          font: {
+            weight: bold;
+            size: 1.3rem;
+          }
+        }
+      }
+      small {
+        letter-spacing: 2px;
+        opacity: 0.75;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 350px) {
+  .background-top {
+    top: -50%;
+    left: -75%;
+    transform: rotate(45deg);
+    opacity: 0.3;
+  }
+
+  .background-bottom {
+    bottom: -50%;
+    right: -75%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .background-top {
+    top: -40%;
+    left: -3.5%;
+    scale: 1.35;
+  }
+  .background-bottom {
+    bottom: -60%;
+    right: -3.75%;
+    scale: 1.5;
+  }
+}

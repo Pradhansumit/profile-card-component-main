@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: hsl(185, 75%, 39%);
+  overflow: hidden;
+  font-weight: 400;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.background-design-container .background-top,
+.background-design-container .background-bottom {
+  position: absolute;
+  width: 662px;
+  height: 662px;
+  z-index: -999;
+}
+
+.content-container {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.text-content-container .profile-img-box {
+  display: block;
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: solid 5px white;
+  transform: translate(0, -50%);
+  margin-bottom: -30px;
+}
+.text-content-container .profile-img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.text-content-container .person-info-container {
+  text-align: center;
+}
+.text-content-container .person-info-container p.name {
+  font-weight: 700;
+  font-size: 18px;
+}
+.text-content-container .person-info-container p.name span {
+  font-weight: 400;
+  opacity: 0.8;
+}
+.text-content-container .person-info-container p.location {
+  font-size: 14px;
+  margin-top: 0.6rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+.text-content-container .stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 0 2rem 0;
+  padding-top: 1.5rem;
+  border-top: solid 1px rgba(0, 0, 0, 0.2);
+}
+.text-content-container .stats-container .stats-box {
+  text-align: center;
+}
+.text-content-container .stats-container .stats-box p.stats-count {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.text-content-container .stats-container .stats-box small {
+  letter-spacing: 2px;
+  opacity: 0.75;
+  font-size: 11px;
+}
+
+@media screen and (min-width: 350px) {
+  .background-top {
+    top: -50%;
+    left: -75%;
+    transform: rotate(45deg);
+    opacity: 0.3;
+  }
+  .background-bottom {
+    bottom: -50%;
+    right: -75%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .background-top {
+    top: -40%;
+    left: -3.5%;
+    scale: 1.35;
+  }
+  .background-bottom {
+    bottom: -60%;
+    right: -3.75%;
+    scale: 1.5;
+  }
+}/*# sourceMappingURL=styles.css.map */
